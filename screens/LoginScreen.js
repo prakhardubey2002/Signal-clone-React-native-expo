@@ -1,31 +1,49 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet,View, Text } from 'react-native'
-import React from 'react'
+import { KeyboardAvoidingView,StyleSheet,View, Text } from 'react-native'
+import React, { useState } from 'react'
 import { Button,Input,Image } from 'react-native-elements';
 const LoginScreen = () => {
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+    const signIn=()=>{
+
+    }
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView behavior='padding'  style={styles.container} >
         <StatusBar style="light" />
         <Image  style={styles.tinyLogo} source={{
             uri:"https://images.hindustantimes.com/tech/img/2021/05/12/960x540/signal_app_1610868805441_1610868819838_1620837476101.png",
         }} />
-      {/* <Text>I am LoginScreen</Text> */}
-    </View>
+      <Text>I am LoginScreen</Text>
+      <View>
+        <Input placeholder='Email' autoFocus type="Email" value={email} onChange={(text) =>setEmail(text)}/>  
+        <Input placeholder='Password' secureTextEntry type="password" 
+        value={password} onChange={(text) =>setPassword(text)} />  
+      </View>
+      <Button style={styles.button} onPress={signIn} title="Login" />
+      <Button style={styles.button} type="outline" title="Register" />
+    </KeyboardAvoidingView>
   )
 }
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      alignItems:'center',
+      justifyContent:'center',
+      padding:'10px',
+     
     },
     tinyLogo: {
         width: 100,
         height: 100,
-        borderRadius:'2rem',
       },
   });
   
 
 export default LoginScreen
+// autofocus in input cause app  to focus that elemnt whenever app loades 
+// securetextentry in password input elemt cause hiding of character of password when user is typing
+// value and onchange is used with setstate to collect data onchange 
+//instead of onlick onpress exist in react native
+//KeyBoardavoidingview is Main view here so that when user click on input elemwent like email and password they dont overlap that's why here behavoir of padding is added with it so on clicking input it will create space of 100px in padding betwwen   
