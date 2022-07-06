@@ -16,9 +16,9 @@ const LoginScreen = ({navigation}) => {
         }} />
       {/* <Text>I am LoginScreen</Text> */}
       <View style={styles.inputContainers} >
-        <Input placeholder='Email' autoFocus type="Email" value={email} onChange={(text) =>setEmail(text)}/>  
+        <Input placeholder='Email' autoFocus type="Email" value={email} onChangeText={(text) =>setEmail(text)}/>  
         <Input placeholder='Password' secureTextEntry type="password" 
-        value={password} onChange={(text) =>setPassword(text)} />  
+        value={password} onChangeText={(text) =>setPassword(text)} />  
       </View>
       <Button style={styles.button} onPress={signIn} title="Login" />
       <Button onPress={()=>navigation.navigate("Register")} style={styles.button} type="outline" title="Register" />
@@ -58,3 +58,4 @@ export default LoginScreen
 //KeyBoardavoidingview is Main view here so that when user click on input elemwent like email and password they dont overlap that's why here behavoir of padding is added with it so on clicking input it will create space of 100px in padding betwwen  
 // onPress={()=>navigation.navigate("name of screen you specified in app.js")} will navigate to the specified screen  
 //Statusbar is bar of phone that show time,notification,wifi battery ets at top and it can be coloured to light and dark and can also be disabled using none in style
+//when collecting textual value from input tag to an form or an usestate onCahngeText is used EX: onChangeText={(text) =>setEmail(text)}
