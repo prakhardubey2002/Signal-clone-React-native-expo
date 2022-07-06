@@ -14,14 +14,15 @@ const LoginScreen = () => {
         <Image  style={styles.tinyLogo} source={{
             uri:"https://images.hindustantimes.com/tech/img/2021/05/12/960x540/signal_app_1610868805441_1610868819838_1620837476101.png",
         }} />
-      <Text>I am LoginScreen</Text>
-      <View>
+      {/* <Text>I am LoginScreen</Text> */}
+      <View style={styles.inputContainers} >
         <Input placeholder='Email' autoFocus type="Email" value={email} onChange={(text) =>setEmail(text)}/>  
         <Input placeholder='Password' secureTextEntry type="password" 
         value={password} onChange={(text) =>setPassword(text)} />  
       </View>
       <Button style={styles.button} onPress={signIn} title="Login" />
       <Button style={styles.button} type="outline" title="Register" />
+      <View style={{height:100}}  />
     </KeyboardAvoidingView>
   )
 }
@@ -35,13 +36,21 @@ const styles = StyleSheet.create({
      
     },
     tinyLogo: {
-        width: 100,
-        height: 100,
+        width: 180,
+        height: 180,
+      },
+      button:{
+        width:200,
+        marginTop:10,
+      },
+      inputContainers:{
+        width:300,
       },
   });
   
 
 export default LoginScreen
+//rnfes is used to generate bolier plate
 // autofocus in input cause app  to focus that elemnt whenever app loades 
 // securetextentry in password input elemt cause hiding of character of password when user is typing
 // value and onchange is used with setstate to collect data onchange 
