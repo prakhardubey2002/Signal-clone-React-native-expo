@@ -15,11 +15,26 @@ const globalScreenOptions={//css component
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={globalScreenOptions} >
-      <Stack.Screen options={{ title:"Lets Sign Up"}} name='Login' component={LoginScreen}/>{/* Path for Login Screen */}
-      <Stack.Screen name='Register' component={RegisterScreen}/>{/* Path for Register Screen */}
-      <Stack.Screen name='Home' component={HomeScreen}/>{/* Path for Register Screen */}
+      
+      <Stack.Navigator 
+      initialRouteName="Home"//default path
+       screenOptions={globalScreenOptions} >
+      
+      <Stack.Screen 
+      options={{ title:"Lets Sign Up"}} 
+      name='Login' 
+      component={LoginScreen}/>{/* Path for Login Screen */}
+      
+      <Stack.Screen 
+      name='Register' 
+      component={RegisterScreen}/>{/* Path for Register Screen */}
+      
+      <Stack.Screen 
+      name='Home' 
+      component={HomeScreen}/>{/* Path for Register Screen */}
+    
       </Stack.Navigator>
+    
     </NavigationContainer>
   );
 }

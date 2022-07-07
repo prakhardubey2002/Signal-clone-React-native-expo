@@ -1,14 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React,{useLayoutEffect} from 'react';
+import { SafeAreaView } from 'react-native';
+import { StyleSheet, ScrollView, Text, } from 'react-native';
+import CustomListitem from '../components/CustomListitem';
 
-const HomeScreen = () => {
-  return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
-  )
+const HomeScreen = ({navigation}) => {
+    useLayoutEffect(() => {
+      navigation.setOptions({
+        title:"Signal",
+      });
+    }, [])
+    return (
+        <SafeAreaView>
+            <ScrollView>
+                <CustomListitem />
+            </ScrollView>
+        </SafeAreaView>
+    )
 }
 
-export default HomeScreen
+export default HomeScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
