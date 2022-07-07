@@ -1,13 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import { StyleSheet, View } from 'react-native'
+import React, { useLayoutEffect, useState } from 'react'
 import { KeyboardAvoidingView } from 'react-native-web'
-import { Button,Input } from 'react-native-elements';
+import { Button,Input, Text } from 'react-native-elements';
 const RegisterScreen = ({navigation}) => {
   const [name,setName]=useState("");
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const [imageUrl,setImageUrl]=useState("");
+
+  useLayoutEffect(() => {
+    navigation.setOptions({//header title 
+      headerBackTitle:"Back to Login",
+    });
+  }, [navigation])
   const register=()=>{
 
   }
@@ -54,6 +60,7 @@ const RegisterScreen = ({navigation}) => {
       raised
       title="Register" 
       onPress={register}/>
+      <View style={{height:100}}/>  
     </KeyboardAvoidingView>
   )
 }
@@ -62,14 +69,18 @@ export default RegisterScreen
 
 const styles = StyleSheet.create({
   container:{
-
+    flex:1,
+    alignItems:"center",
+    justifyContent:"center",
+    padding:10,
+    backgroundColor:"white"
   },
   inputContainer:{
-
+    width:300,
   },
   Button:{
-    width:100,
+    width:200,
     marginTop:10,
   }
 })
-// Text in react native use h1,h2,h3 as attriute because we doesnt have seperate h1,h2 tags EX:<Text h3 >text</Text>
+// Text in react native use h1,h2,h3 as attriute because we doesnt have seperate h1,h2 tags EX:<Text h3 >text</Text> make sure to import text from react native elemt not from in react native at top import
