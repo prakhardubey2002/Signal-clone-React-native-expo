@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackView } from '@react-navigation/stack';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import HomeScreen from './screens/HomeScreen';
 
 const Stack = createStackNavigator();//React native router functionality is in StackNavigation
 const globalScreenOptions={//css component
@@ -15,10 +16,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={globalScreenOptions} >
-      <Stack.Screen options={{
-        title:"Lets Sign Up"
-      }} name='Login' component={LoginScreen}/>{/* Path for Login Screen */}
+      <Stack.Screen options={{ title:"Lets Sign Up"}} name='Login' component={LoginScreen}/>{/* Path for Login Screen */}
       <Stack.Screen name='Register' component={RegisterScreen}/>{/* Path for Register Screen */}
+      <Stack.Screen name='Home' component={HomeScreen}/>{/* Path for Register Screen */}
       </Stack.Navigator>
     </NavigationContainer>
   );

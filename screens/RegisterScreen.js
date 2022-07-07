@@ -19,7 +19,7 @@ const RegisterScreen = ({ navigation }) => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
-        authUser.user.update({
+        authUser.user.updateProfile({
           displayName:name,
           photoURL:imageUrl || "https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-avatar-placeholder-png-image_3416697.jpg"
         });
