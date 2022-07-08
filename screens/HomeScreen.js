@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect,useState } from 'react';
 import { SafeAreaView, TouchableOpacity } from 'react-native';
 import { StyleSheet, ScrollView, Text, View } from 'react-native';
 import { Avatar } from 'react-native-elements';
@@ -6,12 +6,17 @@ import CustomListitem from '../components/CustomListitem';
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons";
 import { auth } from '../firebase';
 const HomeScreen = ({ navigation }) => {
+    const [chats,setChats]=useState([]);
     const signOutUser = () => {
         auth.signOut().then(() => {
             alert('Logged Out');
             navigation.replace("Login");
         });
     }
+    useEffect(() => {
+      
+    }, [])
+    
     useLayoutEffect(() => {
         console.log(auth?.currentUser?.photoURL);
         navigation.setOptions({
