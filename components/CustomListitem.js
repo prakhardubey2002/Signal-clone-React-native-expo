@@ -7,12 +7,12 @@ const CustomListitem = ({id,chatName,enterChat}) => {
       <Avatar
         rounded
         source={{
-          uri: "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
+          uri: "https://i.etsystatic.com/27363395/c/1242/987/0/153/il/ffef3d/2896449986/il_340x270.2896449986_13ae.jpg",
         }}
       />
     <ListItem.Content>
           <ListItem.Title style={{fontWeight:"650"}} >
-                Prakhar
+                Beta Tester 1
           </ListItem.Title>
           <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail" >
             Hey there!
