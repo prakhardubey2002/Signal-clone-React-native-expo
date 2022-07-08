@@ -5,6 +5,7 @@ import { createStackNavigator, StackView } from '@react-navigation/stack';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import HomeScreen from './screens/HomeScreen';
+import AddChatScreen from './screens/AddChatScreen';
 
 const Stack = createStackNavigator();//React native router functionality is in StackNavigation
 const globalScreenOptions={//css component
@@ -33,6 +34,7 @@ export default function App() {
       name='Home' 
       component={HomeScreen}/>{/* Path for Register Screen */}
     
+      <Stack.Screen name='AddChat' component={AddChatScreen} />
       </Stack.Navigator>
     
     </NavigationContainer>
