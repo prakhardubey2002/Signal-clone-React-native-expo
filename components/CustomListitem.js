@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { ListItem, Avatar } from "react-native-elements";
 const CustomListitem = ({id,chatName,enterChat}) => {
   return (
-    <ListItem key={id} bottomDivider>
-      <Avatar onPress={()=>enterChat(id,chatName)}
+    <ListItem onPress={()=>enterChat(id,chatName)} key={id} bottomDivider>
+      <Avatar 
         rounded
         source={{
           uri: "https://i.etsystatic.com/27363395/c/1242/987/0/153/il/ffef3d/2896449986/il_340x270.2896449986_13ae.jpg",
