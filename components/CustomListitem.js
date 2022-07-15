@@ -15,14 +15,7 @@ const CustomListitem = ({id,chatName,enterChat}) => {
                 {chatName}
           </ListItem.Title>
           <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail" >
-            Hey there!
-            Hey there!
-            Hey there!
-            Hey there!
-            Hey there!
-            Hey there!
-            Hey there!
-            Hey there!
+            ABC
           </ListItem.Subtitle>
     </ListItem.Content>
     </ListItem>

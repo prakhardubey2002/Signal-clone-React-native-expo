@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React, { useLayoutEffect } from 'react'
-import { Avatar } from 'react-native-elements'
+import React, { useLayoutEffect } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Avatar} from 'react-native-elements';
+import {AntDesign,FontAwesome,Ionicons} from '@expo/vector-icons';
 
 const ChatScreen = ({ navigation, route }) => {
   useLayoutEffect(() => {
@@ -19,9 +20,15 @@ const ChatScreen = ({ navigation, route }) => {
               uri: "https://i.etsystatic.com/27363395/c/1242/987/0/153/il/ffef3d/2896449986/il_340x270.2896449986_13ae.jpg",
             }}
           />
-          <Text>{route.params.chatName}</Text>
-        </View>
-
+          <Text style={{color:"white",marginLeft:10,fontWeight:"700"}} >{route.params.chatName}</Text>
+        </View> 
+      ),
+      headerLeft: () => (
+       <TouchableOpacity style={{marginLeft:10}}
+       onPress={navigation.goBack}
+       >
+        <AntDesign name='arrowleft' size={24} color="white" />
+       </TouchableOpacity>
       ),
     });
   }, [navigation])
