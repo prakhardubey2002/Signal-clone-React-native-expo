@@ -98,17 +98,45 @@ const ChatScreen = ({ navigation, route }) => {
               messages.map(({ id, data }) => (
                 <Text>hi</Text>,
                 data.email===auth.currentUser.email ?
-                
                 (
                   <View key={id} style={styles.reciever}>
-                    <Avatar/>
+                    <Avatar
+                    position="absolute"
+                    rounded
+                    bottom={-15}
+                    right={-5}
+                    size={30} 
+                    // WEB
+                    containerStyle={{
+                      position:"absolute",
+                      bottom:-15,
+                      right:-5,
+                      
+                    }} 
+                    source={{
+                      uri:data.photoURL,
+                    }}
+                    />
                     <Text style={styles.recieverText} >
                       {data.message}
                     </Text>
                   </View>
                 ):(
                   <View style={styles.sender}>
-                    <Avatar/>
+                    <Avatar
+                    position="absolute"
+                    rounded
+                    bottom={-15}
+                    right={-5}
+                    size={30} 
+                    // WEB
+                    containerStyle={{
+                      position:"absolute",
+                      bottom:-15,
+                      right:-5,
+                      
+                    }} 
+                    />
                     <Text style={styles.senderText} >
                       {data.message}
                     </Text>
@@ -187,7 +215,7 @@ const styles = StyleSheet.create({
   },
   sender: {
       padding: 15,
-      backgroundColor: "#2C68ED",
+      backgroundColor: "#2B68E6",
       alignSelf: "flex-start",
       borderRadius: 20,
       marginRight: 15,
