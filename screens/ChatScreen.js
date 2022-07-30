@@ -92,7 +92,7 @@ const ChatScreen = ({ navigation, route }) => {
         {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss()}> */}
 
         <>
-          <ScrollView>
+          <ScrollView contentContainerStyle={{paddingTop:15}}>
            
             {
               messages.map(({ id, data }) => (
